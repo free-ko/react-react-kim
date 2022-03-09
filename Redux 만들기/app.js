@@ -1,4 +1,4 @@
-import { createStore, actionCreator } from './redux.js'
+import { createStore } from './redux.js'
 import { reducer } from './reducer.js';
 import * as Actions from './actions.js';
 

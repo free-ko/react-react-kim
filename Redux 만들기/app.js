@@ -1,43 +1,16 @@
-function createStore() {
-  let state;
-  let handlers = [];
+import { createStore, actionCreator } from './redux.js'
+import { reducer } from './reducer.js';
+import * as Actions from './actions.js';
 
-  function send(action) {
-    state = worker(state, action);
-    handlers.forEach(handler => handler());
-  }
-
-  function subscribe(handler) {
-    handlers.push(handler);
-  }
-
-  function getState() {
-    return state;
-  }
-
-  return {
-    send,
-    getState,
-    subscribe
-  };
-}
-
-function worker(state = { count: 0 }, action) {
-  // do something
-  switch (action.type) {
-    case 'increase':
-      return { ...state, count: state.count + 1 }
-    default:
-      return { ...state };
-  }
-}
-
-const store = createStore(worker);
+const store = createStore(reducer);
 
 // 함수 구독(등록)
 store.subscribe(function () {
-  store.getState();
+  console.log(store.getState());
 })
 
-store.send({ type: "increase" });
-store.send({ type: "increase" });
+store.dispath(Actions.increase());
+store.dispath(Actions.increase());
+store.dispath(Actions.increase());
+store.dispath(Actions.decrease());
+store.dispath(Actions.reset());

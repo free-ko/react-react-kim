@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Redux 비동기 처리</title>
+    <title>Redux Practice</title>
     <style>
       main {
         padding: 3em;
@@ -15,6 +15,10 @@
       #counter {
         font-size: 124px;
         font-weight: bolder;
+      }
+
+      #loading {
+        visibility: hidden;
       }
 
       button {
@@ -26,10 +30,11 @@
   <body>
     <main>
       <header>
-        <h1>Redux 비동기 처리</h1>
+        <h1>Redux Practice</h1>
       </header>
       <section>
         <p id="counter"></p>
+        <p id="loading">요청중...</p>
         <div>
           <button id="btn-increase">증가</button>
           <button id="btn-async-increase">비동기 증가</button>

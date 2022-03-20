@@ -1,9 +1,9 @@
 export const logger = store => next => action => {
   const currentState = store.getState();
 
-  console.groupCollapsed('action logger => ', action.type);
-  console.log('current state: ', currentState)
-  console.log('action payload: ', action.payload)
+  console.groupCollapsed('Action logger => ', action.type);
+  console.log('Current state: ', currentState)
+  console.log('Action payload: ', action.payload)
   console.groupEnd();
 
   next(action);
